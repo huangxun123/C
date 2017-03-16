@@ -16,13 +16,15 @@ void dfs(int top,int head,int n)
 		sum++;
 		return;
 	}
-	if (top>0)
-	{
-		dfs(top-1,head,n);
-	}
+	
 	if (head<n+1)
 	{
-		dfs(top+1,head+1,n);
+		dfs(top+1,head+1,n);/*未入过栈，则入栈*/
+	}
+
+	if (top>0)
+	{
+		dfs(top-1,head,n);/*未出过栈 ，则出栈*/
 	}
 }
 
